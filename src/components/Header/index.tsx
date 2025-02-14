@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { MoonIcon } from "@/icons/MoonIcon";
 import { GithubIcon } from "@/icons/GithubIcon";
 import { LinkedinIcon } from "@/icons/LinkedinIcon";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   { name: "Home", path: "/" },
@@ -12,6 +13,16 @@ const menuItems = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
+
+  const isActivePath = (path: string) => {
+    if (pathname.includes("/blog") && path === "/blog") {
+      return true;
+    }
+
+    return pathname === path;
+  };
+
   const toggleTheme = () => {
     // TODO: Implement theme toggling
   };
@@ -23,7 +34,9 @@ const Header = () => {
           {menuItems.map((item) => (
             <div
               key={item.path}
-              className="relative hover:underline hover:underline-offset-4 hover:underline-offset-transparent"
+              className={`${
+                isActivePath(item.path) ? "text-accent-400" : ""
+              } relative hover:text-accent-400 cursor-pointer transition-colors duration-200 ease-in-out`}
             >
               <Link href={item.path}>{item.name}</Link>
             </div>
@@ -31,13 +44,28 @@ const Header = () => {
         </div>
         <div className="flex space-x-4">
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <LinkedinIcon width={30} height={25} fill={"currentColor"}/>
+            <LinkedinIcon
+              width={30}
+              height={25}
+              fill={"currentColor"}
+              className="hover:fill-accent-400 transition-colors duration-200 ease-in-out"
+            />
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <GithubIcon width={30} height={25} fill={"currentColor"} />
+            <GithubIcon
+              width={30}
+              height={25}
+              fill={"currentColor"}
+              className="hover:fill-accent-400 transition-colors duration-200 ease-in-out"
+            />
           </a>
           <button onClick={toggleTheme} aria-label="Toggle theme">
-            <MoonIcon width={30} height={25} fill={"none"} />
+            <MoonIcon
+              width={30}
+              height={25}
+              fill={"none"}
+              className="hover:text-accent-400 transition-colors duration-200 ease-in-out"
+            />
           </button>
         </div>
       </div>

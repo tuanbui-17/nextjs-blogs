@@ -1,3 +1,5 @@
+'use client';
+
 import { CATEGORY } from "@/interface/category.interface";
 import React from "react";
 
@@ -31,16 +33,28 @@ const categories = {
 };
 
 const BlogCategories = () => {
+  const [activeCategory, setActiveCategory] = React.useState<string>('all');
+
+  const onChangeCategory = (slug: string) => {
+    setActiveCategory(slug);
+  };
+
   return (
     <div className="flex flex-wrap gap-2">
-      <button className="rounded-xl px-3 py-1.5 text-sm font-medium text-base-200 bg-base-700">
-        all
+      <button
+        className="rounded-xl px-3 py-1.5 text-sm font-medium text-base-200 bg-base-700"
+        onClick={() => onChangeCategory('all')}
+        aria-pressed={activeCategory === 'all'}
+      >
+        All
       </button>
       {categories.data.map((category: CATEGORY) => {
         return (
           <button
             key={category.id}
             className="rounded-xl px-3 py-1.5 text-sm font-medium text-base-200 bg-base-700"
+            onClick={() => onChangeCategory(category.slug)}
+            aria-pressed={activeCategory === category.slug}
           >
             {category.name}
           </button>

@@ -1,3 +1,16 @@
+interface COVER {
+  url: string;
+}
+
+interface AUTHOR {
+  name: string;
+}
+
+interface CATEGORY {
+  name: string;
+  slug: string;
+}
+
 export interface BLOG {
     id: number;
     documentId: string;
@@ -9,15 +22,8 @@ export interface BLOG {
     publishedAt: string;
     type: string;
     readTime: string;
-    cover: {
-      url: string;
-    };
-    author: {
-      name: string;
-    };
-    category: {
-      name: string;
-      slug: string;
-    };
+    cover: COVER;
+    author: AUTHOR;
+    category: CATEGORY;
     // blocks: any TODO: Add blocks type
 }

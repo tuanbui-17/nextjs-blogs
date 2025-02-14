@@ -31,13 +31,13 @@ const Header = () => {
         </div>
         <div className="flex space-x-4">
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <LinkedinIcon width={30} height={25} />
+            <LinkedinIcon width={30} height={25} fill={"currentColor"}/>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
-            <GithubIcon width={30} height={25} />
+            <GithubIcon width={30} height={25} fill={"currentColor"} />
           </a>
           <button onClick={toggleTheme} aria-label="Toggle theme">
-            <MoonIcon width={30} height={25} />
+            <MoonIcon width={30} height={25} fill={"none"} />
           </button>
         </div>
       </div>

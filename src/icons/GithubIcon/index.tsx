@@ -1,12 +1,7 @@
-import { SVGAttributes } from "react";
+import { IconProps } from "@/interface/icon.interface";
 
-type GithubIconProps = Pick<
-  SVGAttributes<SVGElement>,
-  "className" | "width" | "height"
->;
-
-export function GithubIcon(props: Readonly<GithubIconProps>) {
-  const { className, width = "20", height = "20" } = props;
+export function GithubIcon(props: Readonly<IconProps>) {
+  const { className, fill, width = "20", height = "20" } = props;
 
   return (
     <svg
@@ -14,7 +9,7 @@ export function GithubIcon(props: Readonly<GithubIconProps>) {
       width={width}
       height={height}
       viewBox="0 0 24 24"
-      fill="currentColor"
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

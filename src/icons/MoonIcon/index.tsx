@@ -1,12 +1,7 @@
-import { SVGAttributes } from "react";
+import { IconProps } from "@/interface/icon.interface";
 
-type MoonIconProps = Pick<
-  SVGAttributes<SVGElement>,
-  "className" | "width" | "height"
->;
-
-export function MoonIcon(props: Readonly<MoonIconProps>) {
-  const { className, width = "20", height = "20" } = props;
+export function MoonIcon(props: Readonly<IconProps>) {
+  const { className, fill, width = "20", height = "20" } = props;
 
   return (
     <svg
@@ -15,7 +10,7 @@ export function MoonIcon(props: Readonly<MoonIconProps>) {
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill="none"
+      fill={fill}
       viewBox="0 0 24 24"
     >
       <path

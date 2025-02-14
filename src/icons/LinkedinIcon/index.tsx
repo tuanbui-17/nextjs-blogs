@@ -1,12 +1,7 @@
-import { SVGAttributes } from "react";
+import { IconProps } from "@/interface/icon.interface";
 
-type LinkedinIconProps = Pick<
-  SVGAttributes<SVGElement>,
-  "className" | "width" | "height"
->;
-
-export function LinkedinIcon(props: Readonly<LinkedinIconProps>) {
-  const { className, width = "20", height = "20" } = props;
+export function LinkedinIcon(props: Readonly<IconProps>) {
+  const { className, fill, width = "20", height = "20" } = props;
 
   return (
     <svg
@@ -15,7 +10,7 @@ export function LinkedinIcon(props: Readonly<LinkedinIconProps>) {
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill="currentColor"
+      fill={fill}
       viewBox="0 0 24 24"
     >
       <path

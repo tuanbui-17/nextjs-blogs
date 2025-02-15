@@ -17,6 +17,6 @@ export default {
       },
     },
   },
-  darkMode: "media",
+  darkMode: "class", // enable dark mode by class
   plugins: [],
 } satisfies Config;

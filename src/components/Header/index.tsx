@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { MoonIcon } from "@/icons/MoonIcon";
 import { GithubIcon } from "@/icons/GithubIcon";
 import { LinkedinIcon } from "@/icons/LinkedinIcon";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "../Theme/ThemeToggle";
 
 const menuItems = [
   { name: "Home", path: "/" },
@@ -21,10 +21,6 @@ const Header = () => {
     }
 
     return pathname === path;
-  };
-
-  const toggleTheme = () => {
-    // TODO: Implement theme toggling
   };
 
   return (
@@ -59,14 +55,7 @@ const Header = () => {
               className="hover:fill-accent-400 transition-colors duration-200 ease-in-out"
             />
           </a>
-          <button onClick={toggleTheme} aria-label="Toggle theme">
-            <MoonIcon
-              width={30}
-              height={25}
-              fill={"none"}
-              className="hover:text-accent-400 transition-colors duration-200 ease-in-out"
-            />
-          </button>
+          <ThemeToggle />
         </div>
       </div>
     </div>

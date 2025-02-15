@@ -2,13 +2,9 @@
 
 import { MoonIcon } from "@/icons/MoonIcon";
 import { SunIcon } from "@/icons/SunIcon";
-import React, { useState } from "react";
 import { useTheme } from "next-themes";
 
-type Props = {};
-
-const ThemeToggle = (props: Props) => {
-  const [triggerTransition, setTriggerTransition] = useState(false);
+const ThemeToggle = () => {
   const { setTheme, theme } = useTheme();
 
   const toggleDarkMode = () => {

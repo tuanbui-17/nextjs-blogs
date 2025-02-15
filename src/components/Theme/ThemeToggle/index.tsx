@@ -1,7 +1,7 @@
 "use client";
 
-import { MoonIcon } from "@/icons/MoonIcon";
-import { SunIcon } from "@/icons/SunIcon";
+import { MoonIcon } from "@/components/Icon/MoonIcon";
+import { SunIcon } from "@/components/Icon/SunIcon";
 import { useTheme } from "next-themes";
 
 const ThemeToggle = () => {

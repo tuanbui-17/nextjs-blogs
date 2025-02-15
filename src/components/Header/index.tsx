@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { GithubIcon } from "@/icons/GithubIcon";
-import { LinkedinIcon } from "@/icons/LinkedinIcon";
+import { GithubIcon } from "@/components/Icon/GithubIcon";
+import { LinkedinIcon } from "@/components/Icon/LinkedinIcon";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "../Theme/ThemeToggle";
 
